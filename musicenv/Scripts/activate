@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\Users\rahul\Downloads\Project\Music-Genre-Classification-Django\musicenv"
+VIRTUAL_ENV="C:\Users\rahul\Downloads\Project\Music-genere-classification\musicenv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
