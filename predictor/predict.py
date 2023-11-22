@@ -100,6 +100,9 @@ def predict_gen(audio):
 
     loadDataset(dataset_path, dataset)
 
+    # (rate, sig) = librosa.load(audio, sr=22050)
+    # mfcc_feat = librosa.feature.mfcc(y=rate, sr=sig)
+           
     try:
         (rate, sig) = wav.read(audio)
     except Exception as e:
@@ -114,7 +117,11 @@ def predict_gen(audio):
     # (rate, sig) = load_audio_file(audio)
     # (rate, sig) = librosa.load(os.path.join("tests", f), sr=22050)
 
-    mfcc_feat = mfcc(sig, rate, winlen=0.020, appendEnergy=False)
+    # (rate, sig) = librosa.load(), sr=22050)
+    # mfcc_feat = librosa.feature.mfcc(y=rate, sr=sig)
+    
+    mfcc_feat = mfcc(sig, rate, winlen = 0.020, appendEnergy=False)
+
     covariance = np.cov(np.matrix.transpose(mfcc_feat))
     mean_matrix = mfcc_feat.mean(0)
     feature = (mean_matrix, covariance, 0)
